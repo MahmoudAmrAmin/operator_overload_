@@ -66,7 +66,18 @@ public:
 
     OverLoad operator << (OverLoad ob);
 
+    // relational operator
+
+// " == " operator
+
+    bool operator == (OverLoad ob);
+
+// " != " operator
+    bool operator != (OverLoad ob) ;
 };
+
+
+
 //Default Constructor
 
     OverLoad ::OverLoad():number1(0) , number2(0){};
@@ -191,11 +202,31 @@ OverLoad OverLoad::operator << (OverLoad ob)
          return temp;
      }
 
+// relational operator
+
+    // " == " operator
+bool  OverLoad ::operator ==( OverLoad  ob)
+{
+    if( number1 == ob .number1 && number2 == ob .number2 ) {return true ; }
+    else {return false ; }
+}
+
+    // " != " operator
+
+bool OverLoad ::operator!=(OverLoad ob)
+{
+     if( number1 != ob .number1 && number2 != ob .number2 ) {return true ; }
+     else {return false ; }
+}
+
+
+
+
 int main()
 {
-    OverLoad ob1(2, 4) , ob2 ( 3 , 5) , ob3;
-    ob3 = ob1 << ob2;
-    ob3 .print();
+    OverLoad ob1(2, 4) , ob2 ( 12 , 14) , ob3;
+   if( ob1 != ob2 ){cout<<"YES";}
+   else {cout<<"NO"<<endl;}
 
 
 }
