@@ -74,8 +74,25 @@ public:
 
 // " != " operator
     bool operator != (OverLoad ob) ;
-};
 
+// " <= " operator
+    bool operator <= (OverLoad ob);
+
+// " >= " operator
+    bool operator >= (OverLoad ob);
+
+// " >  " operator
+    bool operator > (OverLoad ob);
+
+// " < " operator
+    bool operator < ( OverLoad ob );
+
+// logical operator
+// " && " operator
+
+
+
+};
 
 
 //Default Constructor
@@ -219,13 +236,40 @@ bool OverLoad ::operator!=(OverLoad ob)
      else {return false ; }
 }
 
+    // " <= " operator
+
+ bool OverLoad ::operator<=(OverLoad ob)
+ {
+    return (number1 <= ob.number1 && number2 <= ob.number2);
+ }
+
+    // " >= " operator
+bool OverLoad ::operator>=(OverLoad ob)
+{
+     return (number1 >= ob.number1 && number2 >= ob. number2);
+}
+
+    // " > " operator
+bool OverLoad ::operator>(OverLoad ob)
+{
+     return  (number1 > ob.number1 && number2 > ob. number2);
+}
+
+    // " < " operator
+bool OverLoad ::operator<(OverLoad ob)
+    {
+        return  (number1 < ob.number1 && number2 < ob. number2);
+    }
+
+// logical operator
+    // " && " operator
 
 
 
 int main()
 {
-    OverLoad ob1(2, 4) , ob2 ( 12 , 14) , ob3;
-   if( ob1 != ob2 ){cout<<"YES";}
+    OverLoad ob1(3, 5) , ob2 ( 12 , 14) , ob3;
+   if( ob1 < ob2 ){cout<<"YES";}
    else {cout<<"NO"<<endl;}
 
 
